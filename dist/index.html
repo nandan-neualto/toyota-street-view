@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#eb0a1e">
+  <meta name="description" content="Explore the exterior of Toyota's Burnaston vehicle plant in a touch-friendly live Street View tour.">
+  <title>Toyota Plant Tour · Burnaston</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="identity"><span class="wordmark">TOYOTA</span><span class="header-divider"></span><span class="experience">Plant experience</span></div>
+    <div class="header-actions">
+      <button id="helpButton" class="utility" aria-haspopup="dialog"><span class="help-icon" aria-hidden="true">?</span> How to explore</button>
+      <button id="fullscreenButton" class="utility"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M3 16v5h5M21 16v5h-5"/></svg><span id="fullscreenLabel">Full screen</span></button>
+    </div>
+  </header>
+  <main class="tour">
+    <aside class="sidebar" aria-label="Tour guide">
+      <div class="introduction">
+        <div class="eyebrow"><span class="red-line"></span> UNITED KINGDOM</div>
+        <h1>Explore<br>Burnaston.</h1>
+        <p class="intro-copy">A quick walk around the approach to Toyota’s vehicle plant.</p>
+        <div class="tour-meta"><span>Exterior tour</span><span class="meta-dot">·</span><span id="stopCount">3 stops</span></div>
+      </div>
+      <nav class="stop-list" id="stopList" aria-label="Choose a tour stop"></nav>
+      <section class="guide-note">
+        <div class="guide-label">AT THIS STOP</div>
+        <p id="stopDescription"></p>
+      </section>
+      <div class="sidebar-foot"><span class="live-dot"></span> Live Google Street View <span class="online-label">Internet required</span></div>
+    </aside>
+    <section class="viewer-section" aria-label="Street View tour">
+      <div class="viewer-topline"><div><span class="eyebrow muted">YOUR VIEW</span><h2 id="viewTitle">Plant approach</h2></div><span class="view-counter" id="viewCounter">01 / 03</span></div>
+      <div class="panorama" id="panorama">
+        <iframe id="streetView" title="Toyota Burnaston exterior — Google Street View" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" loading="eager"></iframe>
+        <div id="networkNotice" class="network-notice" hidden>You’re offline. Connect to the internet to load Street View.</div>
+      </div>
+      <div class="view-caption"><span><span class="caption-dot"></span> Drag to look around. Use Google’s on-screen arrows to move.</span><span>Imagery: Oct 2021</span></div>
+      <footer class="tour-controls">
+        <button id="resetButton" class="reset-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 8M4 4v6h6"/></svg> Start over</button>
+        <div class="progress" aria-hidden="true" id="progressDots"></div>
+        <div class="step-buttons"><button id="previousButton" class="secondary">Previous</button><button id="nextButton" class="primary">Next stop <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button></div>
+      </footer>
+    </section>
+  </main>
+  <dialog id="helpDialog" aria-labelledby="helpTitle">
+    <div class="dialog-top"><span class="eyebrow muted">EXPLORING THE PLANT</span><button id="closeHelp" class="close-button" aria-label="Close instructions">×</button></div>
+    <h2 id="helpTitle">Take a look around.</h2>
+    <ol class="instructions"><li><span>01</span><div><strong>Look in any direction</strong><p>Touch and drag the picture, or click and drag with a mouse.</p></div></li><li><span>02</span><div><strong>Follow the route</strong><p>Tap Next stop, or choose a stop from the tour guide. Google’s arrows let you explore nearby views.</p></div></li><li><span>03</span><div><strong>Return to the beginning</strong><p>Tap Start over to reset the tour’s view.</p></div></li></ol>
+    <p class="help-note">This prototype shows historic public exterior imagery at Burnaston, UK. Factory interiors are outside this tour. Street View is supplied live by Google and requires internet access.</p>
+    <div class="dialog-links"><a id="mapsLink" href="https://www.google.com/maps/@?api=1&map_action=pano&pano=UGqwufZJQ7XnHiFrZRE3-Q" target="_blank" rel="noopener noreferrer">Open this view in Google Maps ↗</a><a href="https://www.toyotauk.com/other-information/contact-us" target="_blank" rel="noopener noreferrer">About this Toyota location ↗</a></div>
+    <button id="continueButton" class="primary dialog-continue">Continue exploring</button>
+  </dialog>
+</body>
+</html>
